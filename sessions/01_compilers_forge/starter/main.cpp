@@ -4,7 +4,6 @@
 #include <iostream>
 #include <limits>  // For Side Quest 4
 #include <string>
-#include "display.h"
 // TODO: Implement your character display system here!
 //
 // Core Requirements (demonstrated in session):
@@ -27,39 +26,37 @@ int main() {
     int level = 1;
     int maxHealth = 100;
     int health = maxHealth;
-	 int maxMana = 100;
-	 int mana= 10;
-	 int characterId =42;
+    int maxMana = 100;
+    int mana = 10;
+    int characterId = 42;
     // TODO: Display formatted character sheet
     // Hint: Use std::setw() for alignment
-	 displayCharacter(name,charClass,level,health,maxHealth);
+    displayCharacter(name, charClass, level, health, maxHealth);
     // TODO: Create health progress bar (in-session demo)
     // Hint: Calculate filled = (current * barWidth) / max
-	 //displayBar(health,maxHealth,10);
+    // displayBar(health,maxHealth,10);
     // TODO HOMEWORK: Create mana progress bar (same technique)
-    displayBar(health,maxHealth,10); 
-	 displayBar(mana,maxMana,10); 
+    displayBar(health, maxHealth, 10);
+    displayBar(mana, maxMana, 10);
     // TODO HOMEWORK: Display character ID in different bases
     // Example:
     // int characterId = 42;
     // std::cout << "ID (dec): " << std::dec << characterId << "\n";
     // std::cout << "ID (hex): " << std::hex << characterId << "\n";
     // std::cout << "ID (oct): " << std::oct << characterId << "\n";
-	 displayInBases(characterId);
+    displayInBases(characterId);
     // TODO HOMEWORK (Side Quest 4): Type size exploration
     // Example:
     // std::cout << "sizeof(int): " << sizeof(int) << " bytes\n";
     // std::cout << "int max: " << std::numeric_limits<int>::max() << "\n";
     // Do this for: char, short, int, long, float, double, bool
-	 std::cout << "sizeof (char): "<<sizeof(char) << " " <<
-					  "sizeof (short): "<<sizeof(short) << " " <<
-					  "sizeof (int): "<<sizeof(int) << " " <<
-					  "sizeof (long): "<<sizeof(long) << " " <<
-					  "sizeof (float): "<<sizeof(float) << " " <<
-					  "sizeof (double): "<<sizeof(double) << " " <<
-					  "sizeof (bool): "<<sizeof(bool) << " " << '\n';
-    //std::cout << "Character display not yet implemented!\n";
-    //std::cout << "Open starter/main.cpp and complete the quest.\n";
+    std::cout << "sizeof (char): " << sizeof(char) << " " << "sizeof (short): " << sizeof(short)
+              << " " << "sizeof (int): " << sizeof(int) << " " << "sizeof (long): " << sizeof(long)
+              << " " << "sizeof (float): " << sizeof(float) << " "
+              << "sizeof (double): " << sizeof(double) << " " << "sizeof (bool): " << sizeof(bool)
+              << " " << '\n';
+    // std::cout << "Character display not yet implemented!\n";
+    // std::cout << "Open starter/main.cpp and complete the quest.\n";
 
     return 0;
 }
