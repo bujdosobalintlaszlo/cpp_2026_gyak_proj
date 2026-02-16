@@ -1,4 +1,4 @@
-#include "display#include " display.h "
+#include "display.h"
 
 void displayBar(int current, int max, int barWidth) {
     if (max == 0) {
@@ -32,9 +32,15 @@ void displayCharacter(const std::string& name, const std::string& charClass, int
     (void)level;
     (void)health;
     (void)maxHealth;
+	 displayBar(health,maxHealth);
+	 std::setw(2);
 }
 
 void displayInBases(int value) {
     // TODO: Implement base conversion display
     (void)value;
+	 std::cout << value;
+    std::cout << std::dec << value;
+    std::cout << std::hex << value;
+    std::cout << std::oct << value;
 }
