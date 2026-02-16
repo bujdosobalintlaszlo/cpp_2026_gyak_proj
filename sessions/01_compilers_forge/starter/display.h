@@ -47,6 +47,9 @@ void displayCharacter(const std::string& name, const std::string& charClass, int
  */
 void displayInBases(int value);
 
+/*my own function for displaying multiple characters of the health/manabar*/
+void fillWith(std::string c, int n);
+
 /**
  * Display size and limits of a type
  * NOTE: This template is already implemented for you!

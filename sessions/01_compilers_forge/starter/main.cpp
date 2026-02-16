@@ -37,7 +37,9 @@ int main() {
     // Hint: Calculate filled = (current * barWidth) / max
 	 //displayBar(health,maxHealth,10);
     // TODO HOMEWORK: Create mana progress bar (same technique)
-	 displayMana(mana,maxMana,10); 
+	  
+    displayBar(health,maxHealth,10); 
+	 displayBar(mana,maxMana,10); 
     // TODO HOMEWORK: Display character ID in different bases
     // Example:
     // int characterId = 42;
