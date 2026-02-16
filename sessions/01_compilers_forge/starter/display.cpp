@@ -1,17 +1,13 @@
-#include "display.h"
+#include "display#include " display.h "
 
 void displayBar(int current, int max, int barWidth) {
-    // TODO: Implement progress bar
-    (void)current;
-    (void)max;
-    //(void)barWidth;  // Remove when implementing
     if (max == 0) {
         std::cout << "[";
-        fillWidth('░', barWidth);
+        fillWith('░', barWidth);
         std::cout << "]";
     } else if (current >= max) {
         std::cout << "[";
-        fillwith('█', barWidth);
+        fillWith('█', barWidth);  // Fixed the lowercase 'w' here
         std::cout << "]";
     } else {
         int filled = (current * barWidth) / max;
