@@ -1,8 +1,9 @@
+#include "display.h"
+
 #include <iomanip>
 #include <iostream>
 #include <limits>  // For Side Quest 4
 #include <string>
-#include"display.h"
 // TODO: Implement your character display system here!
 //
 // Core Requirements (demonstrated in session):
@@ -20,12 +21,12 @@
 int main() {
     // TODO: Define character attributes
     // Hint: Use std::string for name/class, int for numbers
-	 std::string name = "test_char_1";
-	 std::string charClass = "wizard";
-	 int level = 1;
-	 int maxHelath = 100;
-	 int health = maxHealth;
-   // TODO: Display formatted character sheet
+    std::string name = "test_char_1";
+    std::string charClass = "wizard";
+    int level = 1;
+    int maxHelath = 100;
+    int health = maxHealth;
+    // TODO: Display formatted character sheet
     // Hint: Use std::setw() for alignment
 
     // TODO: Create health progress bar (in-session demo)

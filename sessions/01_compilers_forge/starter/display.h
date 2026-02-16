@@ -35,7 +35,7 @@ void displayBar(int current, int max, int barWidth = 10);
 void displayCharacter(const std::string& name, const std::string& charClass, int level, int health,
                       int maxHealth);
 
-/** 
+/**
  * Display a number in different bases
  * Requirements for tests:
  * - Must output the value in decimal, hexadecimal, and octal

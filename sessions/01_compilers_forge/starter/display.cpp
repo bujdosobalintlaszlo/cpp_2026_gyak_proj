@@ -16,7 +16,7 @@ void displayBar(int current, int max, int barWidth) {
         fillWith('░', barWidth - filled);
         std::cout << "]";
     }
-	 std::cout << '\n';
+    std::cout << '\n';
 }
 
 void fillWith(char c, int n) {
@@ -27,20 +27,15 @@ void fillWith(char c, int n) {
 
 void displayCharacter(const std::string& name, const std::string& charClass, int level, int health,
                       int maxHealth) {
-    std::cout << std::setw(10) << std::left << name 
-              << " " << std::setw(10) << std::left << charClass 
-              << " " << std::setw(2) << level 
-              << " " << health << "/" << maxHealth << " ";
+    std::cout << std::setw(10) << std::left << name << " " << std::setw(10) << std::left
+              << charClass << " " << std::setw(2) << level << " " << health << "/" << maxHealth
+              << " ";
     displayBar(health, maxHealth);
     std::cout << '\n';
 }
 void displayInBases(int value) {
     // TODO: Implement base conversion display
     (void)value;
-	 std::cout << value;
-    std::cout 
-		  << std::dec value 
-		  << std::hex << value
-		  << std::oct << value
-		  << std::dec << '\n';
+    std::cout << value;
+    std::cout << std::dec value << std::hex << value << std::oct << value << std::dec << '\n';
 }
