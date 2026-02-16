@@ -37,7 +37,6 @@ int main() {
     // Hint: Calculate filled = (current * barWidth) / max
 	 //displayBar(health,maxHealth,10);
     // TODO HOMEWORK: Create mana progress bar (same technique)
-	  
     displayBar(health,maxHealth,10); 
 	 displayBar(mana,maxMana,10); 
     // TODO HOMEWORK: Display character ID in different bases
@@ -52,9 +51,15 @@ int main() {
     // std::cout << "sizeof(int): " << sizeof(int) << " bytes\n";
     // std::cout << "int max: " << std::numeric_limits<int>::max() << "\n";
     // Do this for: char, short, int, long, float, double, bool
-
-    std::cout << "Character display not yet implemented!\n";
-    std::cout << "Open starter/main.cpp and complete the quest.\n";
+	 std::cout << "sizeof (char): "<<sizeof(char) << " " <<
+					  "sizeof (short): "<<sizeof(short) << " " <<
+					  "sizeof (int): "<<sizeof(int) << " " <<
+					  "sizeof (long): "<<sizeof(long) << " " <<
+					  "sizeof (float): "<<sizeof(float) << " " <<
+					  "sizeof (double): "<<sizeof(double) << " " <<
+					  "sizeof (bool): "<<sizeof(bool) << " " << '\n';
+    //std::cout << "Character display not yet implemented!\n";
+    //std::cout << "Open starter/main.cpp and complete the quest.\n";
 
     return 0;
 }

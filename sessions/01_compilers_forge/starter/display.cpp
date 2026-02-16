@@ -32,9 +32,9 @@ void displayCharacter(const std::string& name, const std::string& charClass, int
                       int maxHealth) {
     std::cout << std::setw(10) << std::left << name << " " << std::setw(10) << std::left
               << charClass << " " << std::setw(2) << level << " " << health << "/" << maxHealth
-              << " ";
-    displayBar(health, maxHealth);
-    std::cout << '\n';
+              << " " << '\n';
+    //displayBar(health, maxHealth);
+    
 }
 void displayInBases(int value) {
     // TODO: Implement base conversion display
