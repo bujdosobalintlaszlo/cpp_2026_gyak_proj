@@ -19,6 +19,25 @@ void displayBar(int current, int max, int barWidth) {
     std::cout << '\n';
 }
 
+void displayMana(int current, int max, int barWidth) {
+    if (max == 0) {
+        std::cout << "[";
+        fillWith('░', barWidth);
+        std::cout << "]";
+    } else if (current >= max) {
+        std::cout << "[";
+        fillWith('█', barWidth);  // Fixed the lowercase 'w' here
+        std::cout << "]";
+    } else {
+        int filled = (current * barWidth) / max;
+        std::cout << "[";
+        fillWith('█', filled);
+        fillWith('░', barWidth - filled);
+        std::cout << "]";
+    }
+    std::cout << '\n';
+}
+
 void fillWith(char c, int n) {
     for (int i{0}; i < n; ++i) {
         std::cout << c;

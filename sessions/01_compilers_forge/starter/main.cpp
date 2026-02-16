@@ -4,6 +4,7 @@
 #include <iostream>
 #include <limits>  // For Side Quest 4
 #include <string>
+#include "display.h"
 // TODO: Implement your character display system here!
 //
 // Core Requirements (demonstrated in session):
@@ -24,23 +25,26 @@ int main() {
     std::string name = "test_char_1";
     std::string charClass = "wizard";
     int level = 1;
-    int maxHelath = 100;
+    int maxHealth = 100;
     int health = maxHealth;
+	 int maxMana = 100;
+	 int mana= 10;
+	 int characterId =42;
     // TODO: Display formatted character sheet
     // Hint: Use std::setw() for alignment
-
+	 displayCharacter(name,charClass,level,health,maxHealth);
     // TODO: Create health progress bar (in-session demo)
     // Hint: Calculate filled = (current * barWidth) / max
-
+	 //displayBar(health,maxHealth,10);
     // TODO HOMEWORK: Create mana progress bar (same technique)
-
+	 displayMana(mana,maxMana,10); 
     // TODO HOMEWORK: Display character ID in different bases
     // Example:
     // int characterId = 42;
     // std::cout << "ID (dec): " << std::dec << characterId << "\n";
     // std::cout << "ID (hex): " << std::hex << characterId << "\n";
     // std::cout << "ID (oct): " << std::oct << characterId << "\n";
-
+	 displayInBases(characterId);
     // TODO HOMEWORK (Side Quest 4): Type size exploration
     // Example:
     // std::cout << "sizeof(int): " << sizeof(int) << " bytes\n";
