@@ -18,4 +18,6 @@ class Inventory{
 		  Item* inv;
 		  int size;
 		  int capacity;
+
+		  void resize(int newCap);
 };
