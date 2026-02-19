@@ -8,6 +8,12 @@ class Inventory{
 		  Inventory(const Inventory & other);
 		  //copy assignment
 		  Inventory& operator=(const Inventory& other);
+
+		  int getCapacity();
+		  void addItem(Item i);
+		  int getCount();
+		  int findItem(std::string name);
+		  void removeItem(std::string name);
 	 private:
 		  Item* inv;
 		  int size;
