@@ -1,14 +1,14 @@
 #include "item.h"
 
 Item::Item(std::string itemName,int val){
-	 this.itemName=itemName;
-	 this.val =val;
+	 this->itemName=itemName;
+	 this->val =val;
 }
 
-Item::getName(){
+std::string Item::getName(){
 	 return itemName;;
 }
 
-Item::getValue(){
+int Item::getValue(){
 	 return val;
 }

@@ -1,7 +1,7 @@
 #include "inventory.h"
 #include<vector>
 #include <iostream>
-
+#include"item.h"
 int main() {
     std::cout << "================================\n";
     std::cout << "     INVENTORY SYSTEM\n";
@@ -19,7 +19,9 @@ int main() {
     // TODO: Remove an item
 
     // TODO: Display inventory again
-
+	 Item test("testItem",100);
+	 std::cout << test.getName();
+	 std::cout << test.getValue();
     std::cout << "================================\n";
     return 0;
 }
