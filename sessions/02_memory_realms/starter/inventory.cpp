@@ -31,4 +31,17 @@ void Inventory::addItem(Item i){
 	 inv[size++]=i;
 }
 
+Item* Inventory::findItem(std::string name){
+	 int i{0};
+	 bool found=false;
+	 while(i<size && !found){
+		  if(inv[i].getName() == name){
+				found = true;
+		  }else{
+				++i;
+		  }
+	 }
+	 return found ? &inv[i] : nullptr;
+}
+
 

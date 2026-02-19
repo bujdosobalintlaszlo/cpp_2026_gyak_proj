@@ -12,7 +12,7 @@ class Inventory{
 		  int getCapacity();
 		  void addItem(Item i);
 		  int getCount();
-		  int findItem(std::string name);
+		  Item* findItem(std::string name);
 		  void removeItem(std::string name);
 	 private:
 		  Item* inv;
