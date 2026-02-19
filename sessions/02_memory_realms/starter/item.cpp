@@ -1,10 +1,7 @@
 #include "item.h"
 
-Item::Item(std::string itemName,int val){
-	 this->itemName=itemName;
-	 this->val =val;
-}
-
+Item::Item(std::string itemName,int val) : itemName(itemName),val(val){}
+Item::Item(){}
 std::string Item::getName(){
 	 return itemName;;
 }
