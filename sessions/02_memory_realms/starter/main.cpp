@@ -1,5 +1,5 @@
 #include "inventory.h"
-
+#include<vector>
 #include <iostream>
 
 int main() {
@@ -9,9 +9,9 @@ int main() {
 
     // TODO: Create an Inventory with capacity 10
 
-    // TODO: Add some items
+	 // TODO: Add some items
+	 
     // Example: inventory.addItem("Iron Sword", 100);
-
     // TODO: Display inventory
 
     // TODO: Find an item
@@ -21,6 +21,7 @@ int main() {
     // TODO: Display inventory again
 
     std::cout << "================================\n";
-
     return 0;
 }
+
+
