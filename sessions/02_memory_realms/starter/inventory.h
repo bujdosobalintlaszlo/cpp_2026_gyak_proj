@@ -15,6 +15,7 @@ class Inventory{
 		  int getCount();
 		  Item* findItem(std::string name);
 		  void removeItem(std::string name);
+		  void displayInv();
 	 private:
 		  Item* inv;
 		  int size;

@@ -26,12 +26,17 @@ void Inventory::resize(int newCap){
 void Inventory::addMessage(Item &i){
 	 std::cout << "✓ Added: " << i.getName() << "(value: " << i.getValue() << ")" << '\n';
 }
-
+void Inventory::displayInv(){
+	 std::cout << "Current inventory (" << size << '/' << capacity << " items):"<<'\n';
+	 for(int i=0;i<size;++i){
+		  std::cout << i+1 << ". " << inv[i].getName() << " - " << inv[i].getValue() << " gold" << '\n';
+	 }
+}
 Item* Inventory::findItem(std::string name){
 	 int i{0};
 	 bool found=false;
 	 while(i<size && !found){
-		  if(inv[i].getName() == name){
+	 		  if(inv[i].getName() == name){
 				found = true;
 		  }else{
 				++i;

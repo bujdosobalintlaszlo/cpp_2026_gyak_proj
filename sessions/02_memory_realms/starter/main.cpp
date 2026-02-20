@@ -17,7 +17,7 @@ int main() {
 	 } 
     // Example: inventory.addItem("Iron Sword", 100);
     // TODO: Display inventory
-	 
+	 inv.displayInv(); 
     // TODO: Find an item
 
     // TODO: Remove an item
