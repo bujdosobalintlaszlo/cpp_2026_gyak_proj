@@ -12,7 +12,7 @@ class Inventory {
     Inventory& operator=(const Inventory& other);
 
     int getCapacity();
-    void addItem(std::string, int val);
+    bool addItem(std::string, int val);
     int getCount();
     Item* findItem(const std::string& name);
     bool removeItem(std::string name);

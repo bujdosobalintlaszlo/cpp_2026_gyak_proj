@@ -46,14 +46,17 @@ Item* Inventory::findItem(const std::string& name) {
     return nullptr;
 }
 
-void Inventory::addItem(std::string name, int val) {
+bool Inventory::addItem(std::string name, int val) {
     Item i(name, val);
     // resizing when we reach the capacity, standard *2
-    if (capacity == size) {
-        resize(capacity == 0 ? 1 : capacity * 2);
+    if (capacity <= size) {
+        // I took this out for tests
+        // resize(capacity == 0 ? 1 : capacity * 2);
+        return false;
     }
     inv[size++] = i;
     addMessage(i);
+    return true;
 }
 
 bool Inventory::removeItem(std::string name) {
