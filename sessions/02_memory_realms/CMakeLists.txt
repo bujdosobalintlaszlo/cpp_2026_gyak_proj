@@ -11,8 +11,6 @@ find_package(Catch2 QUIET)
 if(Catch2_FOUND)
     add_executable(test_session02
         tests/test_session02.cpp
-		  starter/Inventory.cpp
-		  starter/Item.cpp
     )
     target_link_libraries(test_session02 PRIVATE Catch2::Catch2WithMain)
     

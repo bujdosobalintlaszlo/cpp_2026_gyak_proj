@@ -1,6 +1,3 @@
-#include "../starter/inventory.h"
-#include "Inventory.h"
-#include "Item.h"
 #include <catch2/catch_all.hpp>
 /*
  * Session 2 Test Coverage
