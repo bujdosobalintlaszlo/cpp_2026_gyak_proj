@@ -10,7 +10,7 @@ Inventory::~Inventory(){
 
 //getters
 int Inventory::getCapacity(){ return this->capacity;}
-int Inventory::getCount(){ return this->capacity;}
+int Inventory::getCount(){ return this->size;}
 
 //I added a param for possible size modification
 //tho I hardcoded *1 as default
