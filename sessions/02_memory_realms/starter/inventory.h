@@ -1,26 +1,28 @@
 #pragma once
 #include "item.h"
+
 #include <iostream>
-class Inventory{
-	 public:
-		  Inventory(int capacity);
-		  ~Inventory();
-		  //copy constructor
-		  Inventory(const Inventory & other);
-		  //copy assignment
-		  Inventory& operator=(const Inventory& other);
+class Inventory {
+   public:
+    Inventory(int capacity);
+    ~Inventory();
+    // copy constructor
+    Inventory(const Inventory& other);
+    // copy assignment
+    Inventory& operator=(const Inventory& other);
 
-		  int getCapacity();
-		  void addItem(Item i);
-		  int getCount();
-		  Item* findItem(std::string name);
-		  bool removeItem(std::string name);
-		  void displayInv();
-	 private:
-		  Item* inv;
-		  int size;
-		  int capacity;
+    int getCapacity();
+    void addItem(Item i);
+    int getCount();
+    Item* findItem(std::string name);
+    bool removeItem(std::string name);
+    void displayInv();
 
-		  void resize(int newCap);
-		  void addMessage(Item &i);
+   private:
+    Item* inv;
+    int size;
+    int capacity;
+
+    void resize(int newCap);
+    void addMessage(Item& i);
 };
