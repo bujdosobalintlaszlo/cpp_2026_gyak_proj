@@ -1,5 +1,4 @@
 #include "inventory.h"
-#include<vector>
 #include <iostream>
 #include"item.h"
 int main() {
@@ -19,10 +18,12 @@ int main() {
     // TODO: Display inventory
 	 inv.displayInv(); 
     // TODO: Find an item
-
+	 Item* i = inv.findItem("item");
+	 std::cout << i->getName() << " " << i->getValue() << '\n';
     // TODO: Remove an item
-
+	 inv.removeItem("item");
     // TODO: Display inventory again
+	 inv.displayInv();
     std::cout << "================================\n";
     return 0;
 }

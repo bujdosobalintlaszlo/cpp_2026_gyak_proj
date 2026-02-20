@@ -53,11 +53,20 @@ void Inventory::addItem(Item i){
 	 addMessage(i);
 }
 
-
-void Inventory::removeItem(std::string name){
-	 Item *delIt =findItem(name);
-	 if(delIt==nullptr){
+bool Inventory::removeItem(std::string name){
+	 Item* delItem=findItem(name);
+	 if(delItem == nullptr) return false;
+	 int newSize = size-1;
+	 Item* newItems = new Item[newSize];
+	 int j=0;
+	 for(int i{0};i<size;++i){
+		  if(inv[i].getName() != name){
+				newItems[j++]=inv[i];
+		  }
 	 }
-	 
+	 delete[] inv;
+    inv = newItems;
+    size = newSize;
+	 return true;
 }
 
