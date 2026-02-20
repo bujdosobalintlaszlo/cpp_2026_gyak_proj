@@ -1,7 +1,8 @@
 #include "../starter/inventory.h"
 
 #include <catch2/catch_all.hpp>
-
+#include "item.h"
+#include "inventory.h"
 /*
  * Session 2 Test Coverage
  *
