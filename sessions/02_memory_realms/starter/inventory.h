@@ -1,5 +1,6 @@
 #pragma once
 #include "item.h"
+#include <iostream>
 class Inventory{
 	 public:
 		  Inventory(int capacity);
@@ -20,4 +21,5 @@ class Inventory{
 		  int capacity;
 
 		  void resize(int newCap);
+		  void addMessage(Item &i);
 };

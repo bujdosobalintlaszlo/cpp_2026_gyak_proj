@@ -10,7 +10,11 @@ int main() {
     // TODO: Create an Inventory with capacity 10
 	 Inventory inv(10);
 	 // TODO: Add some items
-	 
+	 std::cout << "Adding items..."<<'\n';
+	 for(int i=0;i<4;++i){
+		  Item tempIt("item"+i,i+1*100);
+		  inv.addItem(tempIt); 
+	 } 
     // Example: inventory.addItem("Iron Sword", 100);
     // TODO: Display inventory
 	 
