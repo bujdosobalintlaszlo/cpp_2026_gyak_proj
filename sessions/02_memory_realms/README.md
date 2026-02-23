@@ -397,17 +397,6 @@ Before creating your pull request:
 
 ---
 
-## Grading Rubric
-
-| Criterion | Points | Description |
-|-----------|--------|-------------|
-| Correctness | 40 | All tests pass, no crashes |
-| Memory Safety | 30 | No leaks, proper delete, null checks |
-| Design | 20 | Good class structure, encapsulation |
-| Creativity | 10 | Side quests, extra features |
-
----
-
 ## Next Quest Preview
 
 In **Session 3: The Stream of Knowledge**, you'll master input/output and argument passing as you implement a save/load system for your game. Prepare to channel the currents of data! 💾

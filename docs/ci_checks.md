@@ -193,8 +193,8 @@ GitHub Actions automatically re-runs all checks!
 ✅ **No surprises** - Same checks run locally and on GitHub  
 ✅ **Professional workflow** - Experience real CI/CD  
 
-### For Instructor:
-✅ **Automated grading** - Correctness checked automatically  
+### For Instructors:
+✅ **Automated checking** - Correctness verified automatically  
 ✅ **Consistent standards** - Everyone's code meets same criteria  
 ✅ **Less review time** - Focus on design, not formatting/warnings  
 ✅ **Quality assurance** - No unformatted or buggy code merged  
