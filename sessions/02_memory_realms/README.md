@@ -150,93 +150,44 @@ ref = 44;             // modifies value directly
 
 ### Dynamic Memory
 
-```cpp
-// Allocate single object
-int* ptr = new int(42);
-delete ptr;  // Must delete!
+Key operations:
+- Allocate single object with `new`
+- Allocate array with `new[]`
+- Deallocate with `delete` or `delete[]` (must match allocation type)
+- Always check for nullptr before dereferencing
 
-// Allocate array
-int* arr = new int[10];
-delete[] arr;  // Use delete[] for arrays!
-
-// Always check for null
-int* ptr = new int(42);
-if (ptr != nullptr) {
-    *ptr = 100;
-    delete ptr;
-}
-```
+**Resources:**
+- [new expression](https://en.cppreference.com/w/cpp/language/new)
+- [delete expression](https://en.cppreference.com/w/cpp/language/delete)
 
 ### Const Correctness
 
-```cpp
-// Pointer to const data
-const int* ptr1 = &value;  // Can't modify *ptr1
-// *ptr1 = 10;  // Error!
-ptr1 = &other;  // OK: can reassign pointer
+Four combinations of pointer and const:
+1. Mutable pointer to mutable data
+2. Mutable pointer to const data (can't modify through pointer)
+3. Const pointer to mutable data (can't reassign pointer)
+4. Const pointer to const data (can't modify anything)
 
-// Const pointer
-int* const ptr2 = &value;  // Can't reassign ptr2
-*ptr2 = 10;     // OK: can modify data
-// ptr2 = &other;  // Error!
+Think about what each combination allows and prevents.
 
-// Const pointer to const data
-const int* const ptr3 = &value;  // Can't modify anything
-
-// All four variations (homework: implement examples for each):
-int value = 42;
-int other = 100;
-
-int* ptr;                    // 1. Mutable pointer to mutable data
-const int* ptr_to_const;     // 2. Mutable pointer to const data
-int* const const_ptr;        // 3. Const pointer to mutable data
-const int* const const_both; // 4. Const pointer to const data
-```
+**Resources:**
+- [const qualifier](https://en.cppreference.com/w/cpp/language/cv)
 
 ### Stack vs Heap Memory
 
-```
-Stack Memory (automatic):          Heap Memory (dynamic):
-┌─────────────────┐               ┌─────────────────┐
-│  main()         │               │                 │
-│  ┌───────────┐  │               │  new int(42)    │
-│  │ int x=10  │  │               │  ↑              │
-│  │ int* ptr──┼──┼───────────────┼──┘              │
-│  └───────────┘  │               │                 │
-│                 │               │  new int[10]    │
-│  func()         │               │  ↑              │
-│  ┌───────────┐  │               │  │              │
-│  │ int y=20  │  │               │  └──────────────│
-│  │ int* arr──┼──┼───────────────┼─────────────────┘
-│  └───────────┘  │               │                 │
-└─────────────────┘               └─────────────────┘
-   Fast, limited                    Slower, flexible
-   Auto cleanup                     Manual cleanup (delete)
-```
+**Stack Memory (automatic):**
+- Fast allocation/deallocation
+- Limited size
+- Automatic cleanup when scope ends
+- Local variables live here
 
-### Stack Frame Visualization
+**Heap Memory (dynamic):**
+- Slower allocation/deallocation
+- Flexible size
+- Manual cleanup required (delete)
+- Objects created with `new` live here
 
-```
-Function call stack grows downward:
-
-Before func() call:          After func() call:
-┌──────────────┐            ┌──────────────┐
-│ main()       │            │ main()       │
-│ int x = 10   │            │ int x = 10   │
-│ int* ptr     │            │ int* ptr     │
-└──────────────┘            ├──────────────┤
-                            │ func()       │  ← New frame
-                            │ int y = 20   │
-                            │ int* local   │
-                            └──────────────┘
-
-After func() returns:
-┌──────────────┐
-│ main()       │
-│ int x = 10   │  ← y and local destroyed!
-│ int* ptr     │
-└──────────────┘
-```
+Understanding when to use each is crucial for effective C++ programming.
 
 ---
 
@@ -284,70 +235,55 @@ int* arr = new int[10];
 delete arr;  // Should be delete[]!
 ```
 
+**Tip:** Use valgrind or address sanitizer to detect these issues during development.
+
 ---
 
 ## Hints
 
-### Managing Dynamic Array
+### Dynamic Memory Management
 
-```cpp
-class Inventory {
-    Item** items;  // Array of Item pointers
-    int capacity;
-    int count;
-    
-public:
-    Inventory(int cap) : capacity(cap), count(0) {
-        items = new Item*[capacity];
-        // Initialize to nullptr
-        for (int i = 0; i < capacity; i++) {
-            items[i] = nullptr;
-        }
-    }
-    
-    ~Inventory() {
-        // Delete all items
-        for (int i = 0; i < count; i++) {
-            delete items[i];
-        }
-        // Delete array
-        delete[] items;
-    }
-};
-```
+Key concepts to understand:
+- Allocating single objects vs arrays (different syntax)
+- Matching allocation with correct deallocation (delete vs delete[])
+- Always check for nullptr before dereferencing
+- Memory allocated with `new` must be freed with `delete`
 
-### Finding Items
+**Resources:**
+- [Dynamic memory management](https://en.cppreference.com/w/cpp/language/new)
+- [delete expression](https://en.cppreference.com/w/cpp/language/delete)
 
-```cpp
-Item* findItem(const std::string& name) {
-    for (int i = 0; i < count; i++) {
-        if (items[i] != nullptr && items[i]->getName() == name) {
-            return items[i];  // Return pointer to found item
-        }
-    }
-    return nullptr;  // Not found
-}
-```
+### Const Correctness
 
-### Removing Items
+Understand the four pointer/const combinations:
+- Mutable pointer to mutable data
+- Mutable pointer to const data
+- Const pointer to mutable data  
+- Const pointer to const data
 
-```cpp
-bool removeItem(const std::string& name) {
-    for (int i = 0; i < count; i++) {
-        if (items[i] != nullptr && items[i]->getName() == name) {
-            delete items[i];  // Free memory
-            // Shift remaining items
-            for (int j = i; j < count - 1; j++) {
-                items[j] = items[j + 1];
-            }
-            items[count - 1] = nullptr;
-            count--;
-            return true;
-        }
-    }
-    return false;
-}
-```
+Think about: What can be modified? What can be reassigned?
+
+**Resources:**
+- [const qualifier](https://en.cppreference.com/w/cpp/language/cv)
+
+### Managing Dynamic Arrays
+
+For the Inventory class, consider:
+- How to allocate an array of pointers
+- Initialization strategy (what should pointers start as?)
+- Destructor order: delete items first, then the array
+- Shifting elements when removing from middle
+
+### Finding and Removing Items
+
+Think about:
+- How to search through the array efficiently
+- What to return when item not found
+- How to maintain array continuity after removal
+- When to update the count
+
+**Resources:**
+- [Destructors](https://en.cppreference.com/w/cpp/language/destructor)
 
 ---
 
