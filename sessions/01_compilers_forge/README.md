@@ -172,57 +172,36 @@ if (level > MAX_LEVEL) { ... }
 
 ### Formatting Output
 
-```cpp
-#include <iostream>
-#include <iomanip>
+Use `iomanip` for alignment and precision:
+- `std::setw()` - Set field width for alignment
+- `std::setprecision()` - Control decimal places
+- `std::setfill()` - Set fill character for padding
+- `std::hex`, `std::oct`, `std::dec` - Change number base
 
-// Set width for alignment
-std::cout << std::setw(10) << "Name:" << "Aldric\n";
-
-// Set precision for numbers
-std::cout << std::fixed << std::setprecision(2) << 3.14159;  // 3.14
-
-// Fill character
-std::cout << std::setfill('0') << std::setw(5) << 42;  // 00042
-
-// Hex and octal output
-std::cout << std::hex << 255;        // ff
-std::cout << std::oct << 64;         // 100
-std::cout << std::dec << 42;         // 42 (back to decimal)
-```
+**Resources:**
+- [iomanip reference](https://en.cppreference.com/w/cpp/io/manip)
+- [setw documentation](https://en.cppreference.com/w/cpp/io/manip/setw)
 
 ### Creating Progress Bars
 
-```cpp
-int current = 120;
-int max = 150;
-int barWidth = 10;
-int filled = (current * barWidth) / max;
+Think about:
+- How to represent a fraction visually
+- Calculating proportion of filled vs empty characters
+- Using block characters: '█' (filled) and '░' (empty)
+- Handling edge cases (zero max, overflow)
 
-std::cout << "[";
-for (int i = 0; i < barWidth; i++) {
-    if (i < filled) std::cout << "█";
-    else std::cout << "░";
-}
-std::cout << "]";
-```
+**Resources:**
+- [iostream reference](https://en.cppreference.com/w/cpp/io)
 
 ### Memory Layout Exploration
 
-```cpp
-#include <iostream>
-#include <limits>
+Use `sizeof()` and `std::numeric_limits<T>` to explore type properties:
+- Size in bytes for different types
+- Minimum and maximum values
+- Compare results across different systems
 
-// Explore type sizes on your system
-std::cout << "sizeof(char):   " << sizeof(char) << " bytes\n";
-std::cout << "sizeof(int):    " << sizeof(int) << " bytes\n";
-std::cout << "sizeof(double): " << sizeof(double) << " bytes\n";
-std::cout << "sizeof(bool):   " << sizeof(bool) << " bytes\n";
-
-// Numeric limits
-std::cout << "int max: " << std::numeric_limits<int>::max() << "\n";
-std::cout << "int min: " << std::numeric_limits<int>::min() << "\n";
-```
+**Resources:**
+- [numeric_limits reference](https://en.cppreference.com/w/cpp/types/numeric_limits)
 
 ---
 
