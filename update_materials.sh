@@ -85,7 +85,8 @@ fi
 # Attempt merge
 echo -e "${BLUE}Merging updates...${NC}"
 
-if git merge $TEMPLATE_REMOTE/main --no-edit; then
+# Use --allow-unrelated-histories for template repos (needed on first update)
+if git merge $TEMPLATE_REMOTE/main --allow-unrelated-histories --no-edit; then
     echo -e "\n${GREEN}✓ Successfully updated!${NC}"
     echo -e "${GREEN}✓ New materials are now available in your repository.${NC}"
     

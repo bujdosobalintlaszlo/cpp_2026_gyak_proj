@@ -122,9 +122,11 @@ git fetch template
 # See what's new
 git log HEAD..template/main --oneline
 
-# Merge updates (resolve conflicts if any)
-git merge template/main
+# Merge updates (use --allow-unrelated-histories on first update)
+git merge template/main --allow-unrelated-histories
 ```
+
+**Note:** The `--allow-unrelated-histories` flag is required for template repositories on the first update. Subsequent updates won't need it.
 
 ### When to Update
 
@@ -134,15 +136,15 @@ git merge template/main
 
 ### Handling Conflicts
 
-If you get merge conflicts:
-1. Don't panic! This is normal
+If you get merge conflicts (common on first update):
+1. Don't panic! This is normal for template repositories
 2. Open conflicted files (Git marks them with `<<<<<<<`)
 3. Keep your work, add new content
 4. Remove conflict markers
 5. `git add` resolved files
 6. `git commit` to complete the merge
 
-**Tip:** Your work in `sessions/*/starter/` shouldn't conflict with template updates
+**Tip:** Your work in `sessions/*/starter/` shouldn't conflict with template updates after the first merge.
 
 ## 📖 How to Complete Each Quest
 
@@ -155,8 +157,9 @@ See [Formatting Guide](docs/formatting.md) for IDE integration.
 
 ### 1. Get New Quest Materials
 ```bash
-git fetch upstream
-git merge upstream/main
+# Already done in setup - just fetch and merge
+git fetch template
+git merge template/main --allow-unrelated-histories  # First time only
 ```
 
 ### 2. Create Session Branch
