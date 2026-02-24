@@ -11,12 +11,12 @@
 
 /**
  * Display a progress bar showing current/max ratio
- * 
+ *
  * Requirements for tests:
  * - Format: [filled_chars][empty_chars] with NO newline
  * - Use block characters: filled '█' (U+2588), empty '░' (U+2591)
  * - Handle edge cases: max==0, current > max
- * 
+ *
  * Hint: Calculate what proportion of the bar should be filled
  * Resources: https://en.cppreference.com/w/cpp/io/cout
  */
@@ -24,7 +24,7 @@ void displayBar(int current, int max, int barWidth = 10);
 
 /**
  * Display character information with formatted output
- * 
+ *
  * Requirements for tests:
  * - Must include: name, class, level, and health values
  * - Must call displayBar() to show health visually
@@ -39,12 +39,12 @@ void displayCharacter(const std::string& name, const std::string& charClass, int
 
 /**
  * Display a number in different bases
- * 
+ *
  * Requirements for tests:
  * - Must output the value in decimal, hexadecimal, and octal
  * - Tests check for presence of all three representations
  * - Hex can be uppercase or lowercase
- * 
+ *
  * Hint: Stream manipulators can change number base output
  * Remember to reset the stream state after changing it
  * Resources: https://en.cppreference.com/w/cpp/io/manip/hex

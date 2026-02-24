@@ -59,7 +59,7 @@ class Item {
  * - Think about the order of operations in destructor
  * - Consider what happens when removing from middle of array
  * - Remember to update count_ when adding/removing
- * 
+ *
  * Resources:
  * - https://en.cppreference.com/w/cpp/language/new
  * - https://en.cppreference.com/w/cpp/language/delete
