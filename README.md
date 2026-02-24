@@ -88,8 +88,61 @@ Unlock badges for mastery:
    ctest
    ```
 
+4. **Set up template remote for updates** (Important!)
+   ```bash
+   git remote add template https://github.com/gamesh411/cpp-quest.git
+   git fetch template
+   ```
+
 5. **Read the detailed workflow**
    - See [docs/git_workflow.md](docs/git_workflow.md) for complete instructions
+
+## 🔄 Getting New Sessions and Updates
+
+As the course progresses, new sessions and materials will be released. To get updates:
+
+### Option 1: Use the Update Script (Recommended)
+
+```bash
+./update_materials.sh
+```
+
+The script will:
+- Fetch latest changes from the template repository
+- Show you what's new
+- Ask before merging updates
+- Handle the process safely
+
+### Option 2: Manual Update
+
+```bash
+# Fetch latest from template
+git fetch template
+
+# See what's new
+git log HEAD..template/main --oneline
+
+# Merge updates (resolve conflicts if any)
+git merge template/main
+```
+
+### When to Update
+
+- **Weekly**: Check for new sessions at the start of each week
+- **Announcements**: Watch for update notifications in class
+- **Before starting new session**: Always update before beginning a new quest
+
+### Handling Conflicts
+
+If you get merge conflicts:
+1. Don't panic! This is normal
+2. Open conflicted files (Git marks them with `<<<<<<<`)
+3. Keep your work, add new content
+4. Remove conflict markers
+5. `git add` resolved files
+6. `git commit` to complete the merge
+
+**Tip:** Your work in `sessions/*/starter/` shouldn't conflict with template updates
 
 ## 📖 How to Complete Each Quest
 
