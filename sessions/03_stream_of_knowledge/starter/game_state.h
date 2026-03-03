@@ -103,7 +103,11 @@ class GameState {
 	 }
     // TODO: bool saveToFile(const std::string& filename) const
     // Write all data to file, return true on success
-
+	 bool saveToFile(const std::string& filename) const {
+		  std::ifstream fs;
+		  fs.write(this->name);
+		  
+	 }
     // TODO: bool loadFromFile(const std::string& filename)
     // Read all data from file, return true on success
     // Consider: input validation (level range, gold >= 0, etc.)
