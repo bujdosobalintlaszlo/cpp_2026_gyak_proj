@@ -2,54 +2,45 @@
 
 #include <iostream>
 
-// ============================================================================
-// Example Output (what you're building):
-// ============================================================================
-//
-// ================================
-//      INVENTORY SYSTEM
-// ================================
-// Added: Iron Sword (100 gold)
-// Added: Health Potion (50 gold)
-// Added: Magic Staff (200 gold)
-//
-// Current Inventory (3/10):
-//   - Iron Sword: 100 gold
-//   - Health Potion: 50 gold
-//   - Magic Staff: 200 gold
-//
-// Found: Health Potion (50 gold)
-// Removed: Health Potion
-//
-// Current Inventory (2/10):
-//   - Iron Sword: 100 gold
-//   - Magic Staff: 200 gold
-// ================================
-//
-// ============================================================================
-
 int main() {
     std::cout << "================================\n";
     std::cout << "     INVENTORY SYSTEM\n";
     std::cout << "================================\n";
 
-    // TODO: Create an Inventory with capacity 10
+    // Create inventory with capacity 10
+    Inventory inventory(10);
 
-    // TODO: Add some items
-    // Use addItem() method from Inventory class
+    std::cout << "\nAdding items...\n";
+    inventory.addItem("Iron Sword", 100);
+    inventory.addItem("Health Potion", 50);
+    inventory.addItem("Magic Ring", 200);
+    inventory.addItem("Leather Armor", 75);
 
-    // TODO: Display inventory
-    // Implement display() method or iterate through items
+    // Display inventory
+    inventory.display();
 
-    // TODO: Find an item
-    // Use findItem() method
+    // Find an item
+    std::cout << "\nFinding item: Health Potion\n";
+    Item* found = inventory.findItem("Health Potion");
+    if (found != nullptr) {
+        std::cout << "✓ Found: " << found->getName() << " (value: " << found->getValue() << ")\n";
+    }
 
-    // TODO: Remove an item
-    // Use removeItem() method
+    // Remove an item
+    std::cout << "\nRemoving: Health Potion\n";
+    inventory.removeItem("Health Potion");
 
-    // TODO: Display inventory again
+    // Display again
+    inventory.display();
 
-    std::cout << "================================\n";
+    // Try to find removed item
+    std::cout << "\nFinding removed item: Health Potion\n";
+    found = inventory.findItem("Health Potion");
+    if (found == nullptr) {
+        std::cout << "✓ Item not in inventory (correctly removed)\n";
+    }
+
+    std::cout << "\n================================\n";
 
     return 0;
 }
