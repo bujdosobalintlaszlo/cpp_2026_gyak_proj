@@ -1,0 +1,19 @@
+# character data
+test1
+wizard
+12
+120
+Mountain
+# inventory
+0
+# character data
+Main Wizard
+Wizard
+16
+4020
+Mountain
+# inventory
+3
+HealPotion
+Sword
+Boots
