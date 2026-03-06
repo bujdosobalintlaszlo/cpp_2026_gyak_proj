@@ -9,8 +9,6 @@
 #   Without arguments: Applies all available solutions
 #   With session number: Applies only that session's solution (e.g., ./apply_solutions.sh 1)
 
-set -e
-
 SESSIONS_DIR="sessions"
 
 # Color output
@@ -43,7 +41,7 @@ apply_solution() {
             local filename=$(basename "$file")
             cp "$file" "$starter_dir/"
             echo -e "  ${GREEN}✓${NC} Copied $filename"
-            ((file_count++))
+            ((++file_count))
         fi
     done
     
@@ -66,7 +64,7 @@ if [ $# -eq 0 ]; then
         if [ -d "$session_dir" ]; then
             if apply_solution "$session_dir"; then
                 if [ -d "$session_dir/solution" ]; then
-                    ((applied_count++))
+                    ((++applied_count))
                 fi
             fi
         fi
