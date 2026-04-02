@@ -172,6 +172,7 @@ if (level > MAX_LEVEL) { ... }
 
 ### Formatting Output
 
+<<<<<<< HEAD
 ```cpp
 #include <iostream>
 #include <iomanip>
@@ -223,6 +224,38 @@ std::cout << "sizeof(bool):   " << sizeof(bool) << " bytes\n";
 std::cout << "int max: " << std::numeric_limits<int>::max() << "\n";
 std::cout << "int min: " << std::numeric_limits<int>::min() << "\n";
 ```
+=======
+Use `iomanip` for alignment and precision:
+- `std::setw()` - Set field width for alignment
+- `std::setprecision()` - Control decimal places
+- `std::setfill()` - Set fill character for padding
+- `std::hex`, `std::oct`, `std::dec` - Change number base
+
+**Resources:**
+- [iomanip reference](https://en.cppreference.com/w/cpp/io/manip)
+- [setw documentation](https://en.cppreference.com/w/cpp/io/manip/setw)
+
+### Creating Progress Bars
+
+Think about:
+- How to represent a fraction visually
+- Calculating proportion of filled vs empty characters
+- Using block characters: '█' (filled) and '░' (empty)
+- Handling edge cases (zero max, overflow)
+
+**Resources:**
+- [iostream reference](https://en.cppreference.com/w/cpp/io)
+
+### Memory Layout Exploration
+
+Use `sizeof()` and `std::numeric_limits<T>` to explore type properties:
+- Size in bytes for different types
+- Minimum and maximum values
+- Compare results across different systems
+
+**Resources:**
+- [numeric_limits reference](https://en.cppreference.com/w/cpp/types/numeric_limits)
+>>>>>>> upstream/main
 
 ---
 

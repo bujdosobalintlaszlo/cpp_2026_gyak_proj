@@ -1,4 +1,5 @@
 #include "display.h"
+<<<<<<< HEAD
 const std::string FULL_BLOCK = "█";
 const std::string EMPTY_BLOCK = "░";
 
@@ -24,10 +25,19 @@ void fillWith(std::string c, int n) {
     for (int i{0}; i < n; ++i) {
         std::cout << c;
     }
+=======
+
+void displayBar(int current, int max, int barWidth) {
+    // TODO: Implement progress bar
+    (void)current;
+    (void)max;
+    (void)barWidth;  // Remove when implementing
+>>>>>>> upstream/main
 }
 
 void displayCharacter(const std::string& name, const std::string& charClass, int level, int health,
                       int maxHealth) {
+<<<<<<< HEAD
     std::cout << std::setw(10) << std::left << name << " " << std::setw(10) << std::left
               << charClass << " " << std::setw(2) << level << " " << health << "/" << maxHealth
               << " ";
@@ -38,4 +48,17 @@ void displayInBases(int value) {
     (void)value;
     std::cout << value;
     std::cout << std::dec << value << std::hex << value << std::oct << value << std::dec;
+=======
+    // TODO: Implement character display
+    (void)name;
+    (void)charClass;
+    (void)level;
+    (void)health;
+    (void)maxHealth;
+}
+
+void displayInBases(int value) {
+    // TODO: Implement base conversion display
+    (void)value;
+>>>>>>> upstream/main
 }
